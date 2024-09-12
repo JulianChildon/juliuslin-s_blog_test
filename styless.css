@@ -11,9 +11,9 @@ body {
 }
 
 .container {
-    max-width: 400px;
+    max-width: 300px;
     margin: 20px;
-    padding: 20px;
+    padding: 100px;
     background-color: rgba(255, 255, 255, 0.9); /* 半透明背景以突出表单 */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -27,9 +27,9 @@ h2 {
 input {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 5px 0;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 button {
