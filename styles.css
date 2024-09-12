@@ -1,0 +1,305 @@
+/* 设置全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 应用简单、现代的Sans-serif字体 */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f7;
+}
+
+/* 顶部导航栏样式 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.navbar nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin: 0 15px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #0070c9;
+}
+
+/* 英雄区样式 */
+.hero {
+    height: 100vh;
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* 关于我部分样式 */
+.about-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.about-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 博客文章部分样式 */
+.blog-section {
+    padding: 60px 20px;
+    background-color: #f5f5f7;
+    text-align: center;
+}
+
+.blog-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.blog-post {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h3 {
+    font-size: 24px;
+}
+
+.blog-post p {
+    font-size: 16px;
+}
+
+/* 联系我部分样式 */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-section button {
+    padding: 10px 20px;
+    background-color: #0070c9;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-section button:hover {
+    background-color: #005bb5;
+}
+
+/* 页脚样式 */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    color: #ffffff;
+}
+.hero {
+    height: 100vh;
+    background-image: url('https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* 添加英雄区的背景图片 */
+    background-size: cover; /* 让图片覆盖整个区域 */
+    background-position: center; /* 居中显示图片 */
+    background-attachment: scroll; /* 图片随滚动而滚动 */
+    background-repeat: no-repeat; /* 防止图片重复 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* 确保文字在背景图上清晰可见 */
+}
+/* 登录页面样式 */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-container button {
+    padding: 10px 20px;
+    background-color: #0070c9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #005bb5;
+}
+/* 隐藏展开的内容 */
+.more-content {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+/* 展开内容时的动画效果 */
+.more-content.show {
+    display: block;
+    max-height: 500px; /* 根据内容长度调整此值 */
+    overflow: visible;
+}
+
+/* 设置 Read More 链接的样式 */
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0070c9;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #005bb5;
+}
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+}
+
+.container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.container button {
+    padding: 10px 20px;
+    background-color: #0070c9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: #005bb5;
+}
+
+.container p {
+    margin-top: 10px;
+}
+
+a {
+    color: #0070c9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* 为整个页面添加背景图片 */
+.login-icon {
+    display: block;
+    margin: 0 auto 10px; /* 将图标居中并在底部留出一些间距 */
+    width: 80px; /* 设置图标宽度 */
+    height: auto; /* 高度自适应 */
+}

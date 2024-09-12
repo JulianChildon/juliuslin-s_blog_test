@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录和注册</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 登录表单 -->
+        <div class="login-container">
+            <img src="./GDUFS.png" alt="Login Icon" class="login-icon">
+            <h2>登录</h2>
+            <form id="login-form">
+                <label for="login-username">用户名:</label>
+                <input type="text" id="login-username" name="username" required>
+
+                <label for="login-password">密码:</label>
+                <input type="password" id="login-password" name="password" required>
+
+                <button type="submit">登录</button>
+            </form>
+            <p id="login-error" style="color: red; display: none;">无效用户名或密码</p>
+
+            <p>还没有账户？ <a href="#" id="show-register">注册</a></p>
+        </div>
+
+        <!-- 注册表单 -->
+        <div class="register-container" style="display:none;">
+            <h2>注册</h2>
+            <form id="register-form">
+                <label for="register-username">用户名：</label>
+                <input type="text" id="register-username" name="username" required>
+
+                <label for="register-password">密码:</label>
+                <input type="password" id="register-password" name="password" required>
+
+                <label for="register-confirm-password">确认密码:</label>
+                <input type="password" id="register-confirm-password" name="confirm-password" required>
+
+                <button type="submit">注册</button>
+            </form>
+            <p id="register-error" style="color: red; display: none;">密码不匹配</p>
+            <p id="register-success" style="color: green; display: none;">成功注册！</p>
+
+            <p>已经注册过了？ <a href="#" id="show-login">登录</a></p>
+        </div>
+    </div>
+
+    <script>
+        // 切换到注册表单
+        document.getElementById('show-register').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('.login-container').style.display = 'none';
+            document.querySelector('.register-container').style.display = 'block';
+        });
+
+        // 切换到登录表单
+        document.getElementById('show-login').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('.register-container').style.display = 'none';
+            document.querySelector('.login-container').style.display = 'block';
+        });
+
+        // 处理注册表单提交
+        document.getElementById('register-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('register-username').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+
+            // 检查密码是否匹配
+            if (password !== confirmPassword) {
+                document.getElementById('register-error').style.display = 'block';
+                return;
+            }
+
+            // 检查用户名是否已存在
+            if (localStorage.getItem(username)) {
+                document.getElementById('register-error').textContent = '用户名已存在';
+                document.getElementById('register-error').style.display = 'block';
+                return;
+            }
+
+            // 注册成功，保存用户名和密码到 localStorage
+            localStorage.setItem(username, password);
+            document.getElementById('register-error').style.display = 'none';
+            document.getElementById('register-success').style.display = 'block';
+
+            // 清空表单
+            document.getElementById('register-form').reset();
+        });
+
+        // 处理登录表单提交
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            // 从 localStorage 中验证用户名和密码
+            const storedPassword = localStorage.getItem(username);
+            if (storedPassword === password) {
+                sessionStorage.setItem('loggedIn', 'true');
+                window.location.href = "index.html"; // 登录成功后重定向到主页
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        });
+    </script>
+    
+
+</body>
+
+</html>
