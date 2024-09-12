@@ -52,16 +52,7 @@ body {
     color: #0070c9;
 }
 
-/* 英雄区样式 */
-.hero {
-    height: 100vh;
-    background-image: url('hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .hero-content {
     text-align: center;
@@ -173,7 +164,7 @@ body {
 }
 .hero {
     height: 100vh;
-    background-image: url('https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* 添加英雄区的背景图片 */
+    background-image: url('https://www.gdufs.edu.cn/images/24/04/10/1jir59e37d/252423232E1DF3543F7CF633BEB_320BA050_B3633.jpg'); /* 添加英雄区的背景图片 */
     background-size: cover; /* 让图片覆盖整个区域 */
     background-position: center; /* 居中显示图片 */
     background-attachment: scroll; /* 图片随滚动而滚动 */
@@ -297,9 +288,3 @@ a:hover {
     text-decoration: underline;
 }
 /* 为整个页面添加背景图片 */
-.login-icon {
-    display: block;
-    margin: 0 auto 10px; /* 将图标居中并在底部留出一些间距 */
-    width: 80px; /* 设置图标宽度 */
-    height: auto; /* 高度自适应 */
-}
