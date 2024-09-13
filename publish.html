@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发布新博客</title>
+    <link rel="stylesheet" href="styles3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo"><img src="./GDUFS.webp" alt="Logo" style="height: 50px;"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">主页</a></li>
+                <li><a href="index.html#blog">已发布的博客</a></li>
+                <li><a href="#" id="logout-button">登出</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="publish-section">
+        <div id="new-post-form" class="new-post-container">
+            <h3>发布新博客</h3>
+            <form id="create-post-form" class="new-post-form">
+                <label for="post-title" class="form-label">标题:</label>
+                <input type="text" id="post-title" name="post-title" class="form-input" placeholder="请输入标题" required>
+
+                <label for="post-content" class="form-label">内容:</label>
+                <textarea id="post-content" name="post-content" class="form-textarea" placeholder="请输入内容" required></textarea>
+
+                <button type="submit" class="form-submit-button">发布</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 My Blog. All rights reserved.</p>
+    </footer>
+
+    <script src="scriptss.js"></script>
+</body>
+</html>
