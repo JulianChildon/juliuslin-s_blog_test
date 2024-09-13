@@ -56,11 +56,11 @@ body {
 
 .hero-content {
     text-align: center;
-    color: white;
+    color: rgb(8, 0, 0);
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 60px;
     font-weight: 700;
 }
 
