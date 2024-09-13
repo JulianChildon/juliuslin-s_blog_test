@@ -56,16 +56,17 @@ body {
 
 .hero-content {
     text-align: center;
-    color: rgb(8, 0, 0);
+    color: rgb(37, 24, 1);
 }
 
 .hero h1 {
-    font-size: 60px;
+    font-size: 90px;
     font-weight: 700;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 40px;
+    color: rgb(11, 1, 1);
 }
 
 /* 关于我部分样式 */
