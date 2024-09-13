@@ -122,3 +122,7 @@ document.getElementById('create-post-form').addEventListener('submit', function(
     alert("博客发布成功！");
     window.location.href = 'index.html';
 });
+document.getElementById('logout-button').addEventListener('click', function() {
+    sessionStorage.removeItem('loggedIn'); // 清除登录状态
+    window.location.href = "login.html"; // 重定向回登录页面
+});
