@@ -38,7 +38,7 @@
             </ul>
         </nav>
     </header>
-
+    
     <!-- 主体内容区域 -->
     <section id="home" class="hero">
         <div class="hero-content">
@@ -53,28 +53,26 @@
         <p>Hello! I'm a passionate writer and developer who loves to explore new technologies and share knowledge with the world.</p>
     </section>
 
-    <section id="blog" class="blog-section">
+    <section id="blog" class="blog-section"></section>
         <h2>Latest Blog Posts</h2>
-        
-        <div class="blog-post">
-            <h3>一一一</h3>
-            <p>Excerpt from the blog post...</p>
-            <div class="more-content">
-                <p>This is the full content of the blog post. It includes more details and explanations...</p>
-            </div>
-            <a href="#" class="read-more">Read More</a>
+    
+        <div id="blog-posts-container">
+            <!-- 动态加载博客帖子 -->
         </div>
     
-        <div class="blog-post">
-            <h3>Post Title 2</h3>
-            <p>Excerpt from the blog post...</p>
-            <div class="more-content">
-                <p>This is the full content of the blog post. It includes more details and explanations...</p>
-            </div>
-            <a href="#" class="read-more">Read More</a>
-        </div>
+        <!-- 发布新博客的表单 -->
+        <div id="new-post-form">
+            <h3>发布新博客</h3>
+            <form id="create-post-form">
+                <label for="post-title">标题:</label>
+                <input type="text" id="post-title" name="post-title" required>
     
-        <!-- 你可以添加更多的博客文章 -->
+                <label for="post-content">内容:</label>
+                <textarea id="post-content" name="post-content" required></textarea>
+    
+                <button type="submit">发布</button>
+            </form>
+        </div>
     </section>
     
 
