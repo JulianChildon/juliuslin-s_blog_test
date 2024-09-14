@@ -126,3 +126,25 @@ document.getElementById('logout-button').addEventListener('click', function() {
     sessionStorage.removeItem('loggedIn'); // 清除登录状态
     window.location.href = "login.html"; // 重定向回登录页面
 });
+// 将发布的博客保存在 localStorage 或发送到服务器
+document.getElementById('create-post-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const title = document.getElementById('post-title').value;
+    const content = document.getElementById('post-content').value;
+
+    // 创建博客对象
+    const post = {
+        id: Date.now(),
+        title: title,
+        content: content
+    };
+
+    // 保存到 localStorage
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];
+    posts.push(post);
+    localStorage.setItem('posts', JSON.stringify(posts));
+
+    // 重定向到主页
+    window.location.href = 'index.html';
+});

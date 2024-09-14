@@ -76,9 +76,27 @@
     </section>
 
     <footer class="footer">
-        <p>© 2024 👴的博客</p>
+        <p>© 2024 JliusLinの博客考核</p>
     </footer>
 
     <script src="scripts.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const blogPostsContainer = document.getElementById('blog-posts-container');
+            let posts = JSON.parse(localStorage.getItem('posts')) || [];
+        
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'blog-post';
+                postElement.innerHTML = `
+                    <h3>${post.title}</h3>
+                    <p>${post.content}</p>
+                    <button onclick="editPost(${post.id})">编辑</button>
+                    <button onclick="deletePost(${post.id})">删除</button>
+                `;
+                blogPostsContainer.appendChild(postElement);
+            });
+        });
+        </script>
 </body>
 </html>
