@@ -97,6 +97,13 @@
                 blogPostsContainer.appendChild(postElement);
             });
         });
+        document.getElementById('logout-button').addEventListener('click', function() {
+    if (confirm('确定要登出吗？')) {
+        sessionStorage.removeItem('loggedIn');
+        window.location.href = 'login.html';
+    }
+});
+
         </script>
 </body>
 </html>
