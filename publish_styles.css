@@ -1,4 +1,4 @@
-/* 全局字体设置和页面背景 */
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f7f9;
@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 
-/* 导航栏样式 */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -37,7 +37,7 @@ body {
     text-decoration: underline;
 }
 
-/* 主容器样式 */
+
 .new-post-container, .blog-posts-container {
     max-width: 700px;
     margin: 60px auto;
@@ -47,7 +47,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 表单样式 */
+
 .form-label {
     font-size: 1.1em;
     margin-bottom: 8px;
@@ -71,7 +71,7 @@ body {
     outline: none;
 }
 
-/* 按钮样式 */
+
 .form-submit-button {
     background-color: #1921b5;
     color: white;
@@ -87,7 +87,7 @@ body {
     background-color: #0056b3;
 }
 
-/* 页脚样式 */
+
 .footer {
     text-align: center;
     padding: 20px;
@@ -98,7 +98,6 @@ body {
     bottom: 0;
 }
 
-/* 博客文章样式 */
 .blog-post {
     padding: 20px;
     background-color: white;
@@ -136,7 +135,7 @@ body {
     background-color: #ffffff;
 }
 
-/* 分页按钮样式 */
+
 .pagination {
     display: flex;
     justify-content: center;
