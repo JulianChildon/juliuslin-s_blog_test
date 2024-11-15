@@ -1,4 +1,3 @@
-// 添加平滑滚动效果
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -7,10 +6,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-// 添加退出功能
+
 document.getElementById('logout-button').addEventListener('click', function() {
-    sessionStorage.removeItem('loggedIn'); // 清除登录状态
-    window.location.href = "login.html"; // 重定向回登录页面
+    sessionStorage.removeItem('loggedIn');
+    window.location.href = "login.html";
 });
 
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -31,7 +30,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function editPost(postId) {
-    // 实现编辑功能
     let posts = JSON.parse(localStorage.getItem('posts'));
     let postToEdit = posts.find(post => post.id === postId);
     if (postToEdit) {
@@ -40,14 +38,13 @@ function editPost(postId) {
         postToEdit.title = newTitle;
         postToEdit.content = newContent;
         localStorage.setItem('posts', JSON.stringify(posts));
-        location.reload();  // 刷新页面以显示更新后的帖子
+        location.reload();
     }
 }
 
 function deletePost(postId) {
-    // 实现删除功能
     let posts = JSON.parse(localStorage.getItem('posts'));
     posts = posts.filter(post => post.id !== postId);
     localStorage.setItem('posts', JSON.stringify(posts));
-    location.reload();  // 刷新页面以删除该帖子
+    location.reload();
 }

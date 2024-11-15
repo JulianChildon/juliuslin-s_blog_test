@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录和注册</title>
-    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="login_styles.css">
 </head>
 
 <body>
     <div class="container">
-        <!-- 登录表单 -->
         <div class="login-container">
             <img src="./GDUFS.webp" alt="Login Icon" class="login-icon">
             <h2>登录</h2>
-            <p style="color: forestgreen;font-size: 20px;" >使用账户:Admin 密码:123456</p>
-            <p style="color: forestgreen;font-size: 20px;" >进行登录</p>
+            <p style="color: forestgreen;font-size: 20px;">使用账户:Admin 密码:123456</p>
+            <p style="color: forestgreen;font-size: 20px;">进行登录</p>
             <form id="login-form">
                 <label for="login-username">用户名:</label>
                 <input type="text" id="login-username" name="username" required>
@@ -30,7 +29,6 @@
             <p>还没有账户？ <a href="#" id="show-register">注册</a></p>
         </div>
 
-        <!-- 注册表单 -->
         <div class="register-container" style="display:none;">
             <h1 style="color: red;">当前注册系统关闭！</h1>
             <p style="color: red;"><i>暂未开放注册!</i></p>
@@ -55,21 +53,18 @@
     </div>
 
     <script>
-        // 切换到注册表单
         document.getElementById('show-register').addEventListener('click', function (e) {
             e.preventDefault();
             document.querySelector('.login-container').style.display = 'none';
             document.querySelector('.register-container').style.display = 'block';
         });
 
-        // 切换到登录表单
         document.getElementById('show-login').addEventListener('click', function (e) {
             e.preventDefault();
             document.querySelector('.register-container').style.display = 'none';
             document.querySelector('.login-container').style.display = 'block';
         });
 
-        // 处理注册表单提交
         document.getElementById('register-form').addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -77,29 +72,24 @@
             const password = document.getElementById('register-password').value;
             const confirmPassword = document.getElementById('register-confirm-password').value;
 
-            // 检查密码是否匹配
             if (password !== confirmPassword) {
                 document.getElementById('register-error').style.display = 'block';
                 return;
             }
 
-            // 检查用户名是否已存在
             if (localStorage.getItem(username)) {
                 document.getElementById('register-error').textContent = '用户名已存在';
                 document.getElementById('register-error').style.display = 'block';
                 return;
             }
 
-            // 注册成功，保存用户名和密码到 localStorage
             localStorage.setItem(username, password);
             document.getElementById('register-error').style.display = 'none';
             document.getElementById('register-success').style.display = 'block';
 
-            // 清空表单
             document.getElementById('register-form').reset();
         });
 
-        // 处理登录表单提交
         document.getElementById('login-form').addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -108,23 +98,20 @@
             
             if (username === 'Admin' && password === '123456') {
                 sessionStorage.setItem('loggedIn', 'true');
-                sessionStorage.setItem('role', 'admin'); // 设置管理员角色
-                window.location.href = "index.html"; // 登录成功后重定向到主页
+                sessionStorage.setItem('role', 'admin');
+                window.location.href = "index.html";
                 return;
             }
 
-            // 从 localStorage 中验证用户名和密码
             const storedPassword = localStorage.getItem(username);
             if (storedPassword === password) {
                 sessionStorage.setItem('loggedIn', 'true');
-                window.location.href = "index.html"; // 登录成功后重定向到主页
+                window.location.href = "index.html";
             } else {
                 document.getElementById('login-error').style.display = 'block';
             }
         });
     </script>
-    
-
 </body>
 
 </html>

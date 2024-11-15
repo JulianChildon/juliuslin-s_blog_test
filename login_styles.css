@@ -1,9 +1,9 @@
 body {
-    background-image: url('https://www.gdufs.edu.cn/images/banner/banner4.png'); /* 替换为你的背景图片URL */
-    background-size: cover; /* 确保图片覆盖整个页面 */
-    background-position: center; /* 图片居中显示 */
-    background-repeat: no-repeat; /* 防止背景图片重复 */
-    height: 100vh; /* 使背景图片适应全屏 */
+    background-image: url('https://www.gdufs.edu.cn/images/banner/banner4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@ body {
     max-width: 300px;
     margin: 20px;
     padding: 100px;
-    background-color: rgba(255, 255, 255, 0.9); /* 半透明背景以突出表单 */
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -57,10 +57,10 @@ a {
 a:hover {
     text-decoration: underline;
 }
-/* 为整个页面添加背景图片 */
+
 .login-icon {
     display: block;
-    margin: 0 auto 10px; /* 将图标居中并在底部留出一些间距 */
-    width: 80px; /* 设置图标宽度 */
-    height: auto; /* 高度自适应 */
+    margin: 0 auto 10px;
+    width: 80px;
+    height: auto;
 }
